@@ -2,33 +2,15 @@ import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 import { CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
-export class User extends BaseEntity {
+export class Domain extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  firstName: string;
-
-  @Column()
-  lastName: string;
-
-  @Column()
-  email: string;
-
-  @Column()
-  password: string;
-
-  @Column({ nullable: true })
-  phone: string;
-
-  @Column({ nullable: true })
-  countryCode: string;
+  name: string;
 
   @Column({ default: true })
   isActive: boolean;
-
-  @Column({ default: false })
-  isVerified: boolean;
 
   @CreateDateColumn()
   createdAt: Date;
