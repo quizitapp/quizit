@@ -16,7 +16,4 @@ export class User {
 
   @Column({ default: true })
   isVerified: boolean;
-
-  @Column()
-  test: string;
 }
