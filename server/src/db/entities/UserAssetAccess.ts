@@ -1,20 +1,10 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  BaseEntity,
-  ManyToOne,
-  PrimaryColumn,
-} from 'typeorm';
-import { CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, Column, ManyToOne, PrimaryColumn } from 'typeorm';
 import { Domain } from './Domain';
 import { User } from './User';
+import { DBEntity } from './Entity';
 
 @Entity()
-export class UserRoleInDomain extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class UserRoleInDomain extends DBEntity {
   @ManyToOne(() => User, { onDelete: 'CASCADE' })
   user: User;
 
@@ -35,10 +25,4 @@ export class UserRoleInDomain extends BaseEntity {
 
   @Column({ default: true })
   isActive: boolean;
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
 }

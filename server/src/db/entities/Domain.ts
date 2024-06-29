@@ -1,20 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
-import { CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, Column } from 'typeorm';
+import { DBEntity } from './Entity';
 
 @Entity()
-export class Domain extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Domain extends DBEntity {
   @Column()
   name: string;
 
   @Column({ default: true })
   isActive: boolean;
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
 }

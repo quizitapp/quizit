@@ -1,5 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import Env from '@shared/services/Env';
+import Env from 'src/shared/services/Env';
 const shouldSynchronizeDb = Env.TYPEORM_SYNCHRONIZE;
 const notInTestEnv = Env.NODE_ENV !== 'test';
 
@@ -12,7 +12,7 @@ const ormconfig: TypeOrmModuleOptions = {
   password: Env.DB_PASSWORD,
   database: Env.DB_DATABASE,
   synchronize: notInTestEnv && shouldSynchronizeDb,
-  entities: [__dirname + '/entities/*.ts'],
+  entities: [__dirname + '/entities/*.js'],
   migrations: [__dirname + '/migrations/*.ts'],
 };
 

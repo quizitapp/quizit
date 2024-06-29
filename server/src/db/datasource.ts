@@ -1,4 +1,4 @@
-import Env from '../../../shared/services/Env';
+import Env from './../shared/services/Env';
 import { DataSource } from 'typeorm';
 
 // This file is only for the typeorm CLI.
