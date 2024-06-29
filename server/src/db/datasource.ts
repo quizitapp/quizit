@@ -10,4 +10,6 @@ export default new DataSource({
   username: Env.DB_USERNAME,
   password: Env.DB_PASSWORD,
   database: Env.DB_DATABASE,
+  entities: [__dirname + '/entities/*.ts'],
+  migrations: [__dirname + '/migrations/*.ts'],
 });

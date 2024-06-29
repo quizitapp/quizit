@@ -12,8 +12,8 @@ const ormconfig: TypeOrmModuleOptions = {
   password: Env.DB_PASSWORD,
   database: Env.DB_DATABASE,
   synchronize: notInTestEnv && shouldSynchronizeDb,
-  entities: [__dirname + '/**/*.entity{.ts,.js}'],
-  migrations: ['./migrations/*.ts'],
+  entities: [__dirname + '/entities/*.ts'],
+  migrations: [__dirname + '/migrations/*.ts'],
 };
 
 export default ormconfig;
