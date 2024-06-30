@@ -25,6 +25,7 @@ export class LoggingInterceptor implements NestInterceptor {
   routes: {
     readMany: {
       interceptors: [LoggingInterceptor],
+      exclude: ['password'],
     },
   },
 })
